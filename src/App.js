@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header/Header";
+import Products from "./components/products/ProductsList";
+import { products, categories } from "./helper/data";
+import "./app.scss"
+
+//? "export default" ile import ettiğimiz şeylerin isimleri oradakiyle aynı olmak zorunda değil. İmport sırasında kendi istediğimiz ismi de verebiliriz.
+
+//? Fakat "named export" ile export edilmiş şeyleri kendi ismiyle yazmak gerekiyor.
 
 function App() {
+  // console.log(products);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header categories={categories} text="Products List" />
+      <Products products={products} />
     </div>
   );
 }
